@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>King James - Gallery</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<style>
+    .hero-gallery {
+        position: relative;
+        height: 60vh;
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+    .hero-gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: blur(2px);
+        transform: scale(1.1);
+    }
+    .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        width: 90%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        z-index: 2;
+    }
+    .hero-text h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+    .gallery-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        aspect-ratio: 4/3;
+    }
+    .gallery-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .gallery-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    .gallery-item:hover .gallery-img {
+        transform: scale(1.1);
+    }
+    @media (max-width: 768px) {
+        .hero-text h1 {
+            font-size: 2rem;
+        }
+        .gallery-container {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+    }
+    /* Overlay to darken the blurred background */
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.3);
+        z-index: 1;
+    }
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="../index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="../img/badge.jpg" alt="Admission Icon" class="me-3" style="width: 60px; height: 60px;">
+            <div>
+                <h2 class="m-0 text-primary">King James School of Nursing & <br>Midwifery</h2>
+            </div>
+        </a>
+        
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="../index.php" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="gallery.html" class="dropdown-item">Gallery</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="admission.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Apply Now<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Gallery Section -->
+    <div class="hero-gallery">
+        <img src="../img/grad1.jpg" alt="King James Graduation Ceremony">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1 style="color: white; font-weight: 800; text-transform: uppercase;">KING JAMES SCHOOL OF NURSING AND MIDWIFERY</h1>
+            <h2 style="color: white; font-weight: 700; text-transform: uppercase;">1ST GRADUATION GALLERY 2025</h2>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="container py-5">
+        <h2 class="text-center mb-4">Our Gallery</h2>
+        <div class="gallery-container">
+            <!-- Gallery Images in Order -->
+            <div class="gallery-item">
+                <img src="../img/grad1.jpg" alt="Graduation Photo 1" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad2.jpg" alt="Graduation Photo 2" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad3.jpg" alt="Graduation Photo 3" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad4.jpg" alt="Graduation Photo 4" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad5.jpg" alt="Graduation Photo 5" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad6.jpg" alt="Graduation Photo 6" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad7.jpg" alt="Graduation Photo 7" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad8.jpg" alt="Graduation Photo 8" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad9.jpg" alt="Graduation Photo 9" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad10.jpg" alt="Graduation Photo 10" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad11.jpg" alt="Graduation Photo 11" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad12.jpg" alt="Graduation Photo 12" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad13.jpg" alt="Graduation Photo 13" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad14.jpg" alt="Graduation Photo 14" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad15.jpg" alt="Graduation Photo 15" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad16.jpg" alt="Graduation Photo 16" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad17.jpg" alt="Graduation Photo 17" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad18.jpg" alt="Graduation Photo 18" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad19.jpg" alt="Graduation Photo 19" class="gallery-img" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../img/grad20.jpg" alt="Graduation Photo 20" class="gallery-img" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+        <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Anai Road, Lira city, Nothern Uganda, Uganda</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+256785580050, +256778164191</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>kingjamesnursing@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="../img/grad1.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="../img/grad2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="../img/grad3.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="../img/grad4.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="../img/grad5.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="../img/grad6.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://code-div.com">Code-div</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
